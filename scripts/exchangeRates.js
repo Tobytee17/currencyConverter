@@ -22,27 +22,13 @@ function convertCurrency() {
             }
         }
     }
-    console.log(currency1Value + " " + currency2Value)
+    var currencyAmount = document.getElementById('userInput').value
+
+    var result = (1/currency1Value) * currencyAmount * currency2Value
+
+    document.getElementById('resultsArea').innerHTML = currencyAmount + " " + currency1 + " Is equal to " + result.toFixed(4) + " " + currency2
+    console.log(result)
+    //console.log(currency1Value + " " + currency2Value)
+    //console.log(currencyAmount)
     //console.log(currency1 + " " + currency2)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*function convertCurrency() {
-    var test = document.getElementById('Currency1').value
-    var test2 = document.getElementById('Currency2').value
-    console.log(test + " " + test2)
-}
-*/

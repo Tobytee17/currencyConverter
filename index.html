@@ -50,11 +50,14 @@
 
 
 <div class="row">
-    <div class="col-lg-6">
-        <form id = "currencySelectForm">
-            <input type="button" value ="Convert" onclick="convertCurrency();">
+    <div class="col-lg-4">
 
-        </form>
+    </div>
+    <div class="col-lg-4">
+        <form id = "currencySelectForm">
+            <div class="row">
+                <input type="text" class ="form-control-static" placeholder="Enter Amount Here" id="userInput">
+            </div>
         <!--Selection tool -->
         <select class="selectpicker" data-live-search = "true" form = "currencySelectForm" id = "Currency1">
             <option selected> Please Select a Currency </option>
@@ -124,8 +127,14 @@
             <option value = "TRY">Turkish Lira</option>
             <option value = "ZAR">South African Rand</option>
         </select>
+        <input type="button" value ="Convert" onclick="convertCurrency();">
+    </form>
     </div>
-    <div class="col-lg-6">Col2</div>
+    <div class="col-lg-4">
+        <div class="jumbotron" id = "resultsJumbo">
+            <h1 id= "resultsArea"></h1>
+        </div>
+    </div>
 </div>
 
 
