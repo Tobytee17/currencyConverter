@@ -20,122 +20,125 @@
 <body>
     <!--- Navigation Bar -->
     <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-            <!-- Collapsible functionality -->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- Collapsible functionality -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Exchange International</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navBar">
+                <a class="navbar-brand" href="#">Exchange International</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navBar">
 
-          <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">API</a></li>
-            <li><a href="#">Rates</a></li>
-          </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Rates</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
-<div class="jumbotron">
-    <div class="container-fluid">
-        <h1>Header</h1>
-        <p>Paragraph</p>
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="col-lg-4">
-
-    </div>
-    <div class="col-lg-4">
-        <form id = "currencySelectForm">
-            <div class="row">
-                <input type="text" class ="form-control-static" placeholder="Enter Amount Here" id="userInput">
-            </div>
-        <!--Selection tool -->
-        <select class="selectpicker" data-live-search = "true" form = "currencySelectForm" id = "Currency1">
-            <option selected> Please Select a Currency </option>
-            <option value = "AUD">Australian Dollar</option>
-            <option value = "BGN">Belgian Lev</option>
-            <option value = "BRL">Brazilian Real Equals</option>
-            <option value = "CAD">Canadian Dollars</option>
-            <option value = "CHF">Swiss Franks</option>
-            <option value = "CNY">Chinese Yuan</option>
-            <option value = "CZK">Czech Koruna</option>
-            <option value = "DKK">Danish Krone</option>
-            <option value = "EUR">Euro</option>
-            <option value = "GBP">Great British Pound</option>
-            <option value = "HKD">Hong Kong Dollar</option>
-            <option value = "HRK">Croatian Kuna</option>
-            <option value = "HUF">Hungarian Forint</option>
-            <option value = "IDR">Indonesian Rupiah</option>
-            <option value = "ILS">Israeli Shekel</option>
-            <option value = "INR">Indian Rupee</option>
-            <option value = "JPY">Japanese Yen</option>
-            <option value = "KRW">South Korean Won</option>
-            <option value = "MXN">Mexican Peso</option>
-            <option value = "MYR">Malaysian Ringgit</option>
-            <option value = "NOK">Norwegian Krone</option>
-            <option value = "NZD">New Zealand Dollar</option>
-            <option value = "PHP">Philippine Peso</option>
-            <option value = "PLN">Polish Zloty</option>
-            <option value = "RON">Romanian New Leu</option>
-            <option value = "RUB">Russian Ruble</option>
-            <option value = "SEK">Swedish Krona</option>
-            <option value = "SGD">Singapore Dollar</option>
-            <option value = "THB">Thai Baht</option>
-            <option value = "TRY">Turkish Lira</option>
-            <option value = "ZAR">South African Rand</option>
-        </select>
-        <select class="selectpicker" data-live-search = "true" form = "currencySelectForm" id = "Currency2">
-            <option selected> Please Select a Currency </option>
-            <option value = "AUD">Australian Dollar</option>
-            <option value = "BGN">Belgian Lev</option>
-            <option value = "BRL">Brazilian Real Equals</option>
-            <option value = "CAD">Canadian Dollars</option>
-            <option value = "CHF">Swiss Franks</option>
-            <option value = "CNY">Chinese Yuan</option>
-            <option value = "CZK">Czech Koruna</option>
-            <option value = "DKK">Danish Krone</option>
-            <option value = "EUR">Euro</option>
-            <option value = "GBP">Great British Pound</option>
-            <option value = "HKD">Hong Kong Dollar</option>
-            <option value = "HRK">Croatian Kuna</option>
-            <option value = "HUF">Hungarian Forint</option>
-            <option value = "IDR">Indonesian Rupiah</option>
-            <option value = "ILS">Israeli Shekel</option>
-            <option value = "INR">Indian Rupee</option>
-            <option value = "JPY">Japanese Yen</option>
-            <option value = "KRW">South Korean Won</option>
-            <option value = "MXN">Mexican Peso</option>
-            <option value = "MYR">Malaysian Ringgit</option>
-            <option value = "NOK">Norwegian Krone</option>
-            <option value = "NZD">New Zealand Dollar</option>
-            <option value = "PHP">Philippine Peso</option>
-            <option value = "PLN">Polish Zloty</option>
-            <option value = "RON">Romanian New Leu</option>
-            <option value = "RUB">Russian Ruble</option>
-            <option value = "SEK">Swedish Krona</option>
-            <option value = "SGD">Singapore Dollar</option>
-            <option value = "THB">Thai Baht</option>
-            <option value = "TRY">Turkish Lira</option>
-            <option value = "ZAR">South African Rand</option>
-        </select>
-        <input type="button" value ="Convert" onclick="convertCurrency();">
-    </form>
-    </div>
-    <div class="col-lg-4">
-        <div class="jumbotron" id = "resultsJumbo">
-            <h1 id= "resultsArea"></h1>
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <h1>Header</h1>
+            <p>Paragraph</p>
         </div>
     </div>
-</div>
+
+
+    <div class="col-lg-12">
+        <!--User Form-->
+        <form class="form-inline" id="currencySelectForm">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Amount Here" id="userInput">
+            </div>
+            <!--Selection tool -->
+            <div class="form-group">
+                <select class="selectpicker" data-live-search="true" form="currencySelectForm" id="Currency1">
+                <option id="disabledText" value="" disabled selected> Please Select a Currency </option>
+                <option value = "AUD">Australian Dollar</option>
+                <option value = "BGN">Belgian Lev</option>
+                <option value = "BRL">Brazilian Real Equals</option>
+                <option value = "CAD">Canadian Dollars</option>
+                <option value = "CHF">Swiss Franks</option>
+                <option value = "CNY">Chinese Yuan</option>
+                <option value = "CZK">Czech Koruna</option>
+                <option value = "DKK">Danish Krone</option>
+                <option value = "EUR">Euro</option>
+                <option value = "GBP">Great British Pound</option>
+                <option value = "HKD">Hong Kong Dollar</option>
+                <option value = "HRK">Croatian Kuna</option>
+                <option value = "HUF">Hungarian Forint</option>
+                <option value = "IDR">Indonesian Rupiah</option>
+                <option value = "ILS">Israeli Shekel</option>
+                <option value = "INR">Indian Rupee</option>
+                <option value = "JPY">Japanese Yen</option>
+                <option value = "KRW">South Korean Won</option>
+                <option value = "MXN">Mexican Peso</option>
+                <option value = "MYR">Malaysian Ringgit</option>
+                <option value = "NOK">Norwegian Krone</option>
+                <option value = "NZD">New Zealand Dollar</option>
+                <option value = "PHP">Philippine Peso</option>
+                <option value = "PLN">Polish Zloty</option>
+                <option value = "RON">Romanian New Leu</option>
+                <option value = "RUB">Russian Ruble</option>
+                <option value = "SEK">Swedish Krona</option>
+                <option value = "SGD">Singapore Dollar</option>
+                <option value = "THB">Thai Baht</option>
+                <option value = "TRY">Turkish Lira</option>
+                <option value = "ZAR">South African Rand</option>
+            </select>
+            </div><div class="form-group">
+                <span class ="glyphicon glyphicon-arrow-right"></span>
+            </div>
+            <div class="form-group">
+                <select class="selectpicker" data-live-search="true" form="currencySelectForm" id="Currency2">
+                <option id="disabledText" value="" disabled selected> Please Select a Currency </option>
+                <option value = "AUD">Australian Dollar</option>
+                <option value = "BGN">Belgian Lev</option>
+                <option value = "BRL">Brazilian Real Equals</option>
+                <option value = "CAD">Canadian Dollars</option>
+                <option value = "CHF">Swiss Franks</option>
+                <option value = "CNY">Chinese Yuan</option>
+                <option value = "CZK">Czech Koruna</option>
+                <option value = "DKK">Danish Krone</option>
+                <option value = "EUR">Euro</option>
+                <option value = "GBP">Great British Pound</option>
+                <option value = "HKD">Hong Kong Dollar</option>
+                <option value = "HRK">Croatian Kuna</option>
+                <option value = "HUF">Hungarian Forint</option>
+                <option value = "IDR">Indonesian Rupiah</option>
+                <option value = "ILS">Israeli Shekel</option>
+                <option value = "INR">Indian Rupee</option>
+                <option value = "JPY">Japanese Yen</option>
+                <option value = "KRW">South Korean Won</option>
+                <option value = "MXN">Mexican Peso</option>
+                <option value = "MYR">Malaysian Ringgit</option>
+                <option value = "NOK">Norwegian Krone</option>
+                <option value = "NZD">New Zealand Dollar</option>
+                <option value = "PHP">Philippine Peso</option>
+                <option value = "PLN">Polish Zloty</option>
+                <option value = "RON">Romanian New Leu</option>
+                <option value = "RUB">Russian Ruble</option>
+                <option value = "SEK">Swedish Krona</option>
+                <option value = "SGD">Singapore Dollar</option>
+                <option value = "THB">Thai Baht</option>
+                <option value = "TRY">Turkish Lira</option>
+                <option value = "ZAR">South African Rand</option>
+            </select>
+            </div>
+            <div class="form-group">
+                <input class ="btn btn-primary" type="button" value="Convert" onclick="convertCurrency();">
+            </div>
+            <div class="jumbotron" id="resultsJumbo">
+                <h1 id="resultsArea"></h1>
+        </form>
+        </div>
+    </div>
+    </div>
 
 
 
