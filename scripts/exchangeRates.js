@@ -26,7 +26,7 @@ function convertCurrency() {
 
     var result = (1/currency1Value) * currencyAmount * currency2Value
 
-    document.getElementById('resultsArea').innerHTML = currencyAmount + " " + currency1 + " Is equal to " + result.toFixed(4) + " " + currency2
+    document.getElementById('resultsArea').innerHTML = currencyAmount + " " + currency1 + " = " + result.toFixed(3) + " " + currency2
     console.log(result)
     //console.log(currency1Value + " " + currency2Value)
     //console.log(currencyAmount)
