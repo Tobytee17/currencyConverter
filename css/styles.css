@@ -1,19 +1,33 @@
+body {
+    background-color: #ecf0f1;
+}
+
+h1 {
+    display: inline;
+}
+
+a {
+    color: #f39c12;
+}
+
+a:hover {
+    color: #c0392b;
+}
+
 .col-lg-12 {
-    background-color: #888;
+    background-color: #ecf0f1;
     text-align: center;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    height: 50%;
+
 }
 
 .jumbotron {
     text-align: center;
     margin-bottom: 0;
+    background-color: #2980b9;
+    color: white;
 }
 
 .navbar {
-    background-color: #333;
     border: none;
     border-radius: 0;
     margin-bottom: 0;
@@ -27,7 +41,6 @@
    color: #666;
 }
 
-
 .navbar-inverse .container-fluid .navbar-collapse .navbar-nav > li > a {
     color: white;
 }
@@ -37,7 +50,7 @@
 }
 
 .form-group {
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .glyphicon-arrow-right {
@@ -47,10 +60,33 @@
 
 #resultsJumbo {
     text-align: center;
-    background-color: #888;
-    color: white;
+    background-color: #ecf0f1;
+    color: black;
 }
 
 #userInput {
     text-align: center;
+}
+
+#result {
+    color: #2980b9;
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+#conversionOutput {
+    font-size: 2.5em;
+}
+
+#dateArea {
+    font-size: 1em;
+    text-decoration-line: underline;
+}
+
+#result, #conversionOutput {
+    display: inline;
+}
+
+#headingColour {
+    color: #f1c40f;
 }
