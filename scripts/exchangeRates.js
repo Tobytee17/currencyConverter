@@ -1,35 +1,37 @@
 var currentRates;
 var date;
 
-function getRates() {
+//On document load, fetch API data from Fixer.io and store data.
+$(document).ready(function() {
     $.getJSON("http://api.fixer.io/latest?base=USD", function(data) {
         currentRates = data.rates;
+        //add USD value (USD value isn't generated in the API as it i used as the base currnecy)
         currentRates.USD = 1;
         date = data.date;
+        console.log(data)
     });
-}
-getRates();
+});
 
 function convertCurrency() {
     //Validates the user input amount to make sure it is an integer
     var myRegEx = /^-?\d+\.?\d*$/;
-    var regExFlag = myRegEx.test(document.getElementById('userInput').value);
+    var regExFlag = myRegEx.test($("#userInput").val())
     //if input is invalid, reset all text areas + give error message
     if ((document.getElementById('Currency1').value == "") || document.getElementById('Currency2').value == "") {
+    //if($("#Currency1").val() == "") {
         alert("Please Select two currencies");
-        document.getElementById('userInput').value = "";
+        $("#userInput").val("");
     } else {
         if (regExFlag === false) {
             alert("Please enter a valid amount")
-            document.getElementById('userInput').value = "";
-            document.getElementById('resultsArea').innerHTML = "";
-            document.getElementById('dateArea').innerHTML = "";
-            document.getElementById('result').innerHTML = "";
-            document.getElementById('conversionOutput').innerHTML = "";
+            $("#userInput").val("");
+            $("#result").html("");
+            $("#dateArea").html("");
+            $("#conversionOutput").html("");
         } else if (regExFlag === true) {
             //Gets the two different user selected currencies
-            var currency1 = document.getElementById('Currency1').value;
-            var currency2 = document.getElementById('Currency2').value;
+            var currency1 = $("#Currency1").val();
+            var currency2 = $("#Currency2").val();
             //Matches user selected currencies to the values sent by the API
             for (var x in currentRates) {
                 if (x = currency1) {
@@ -41,11 +43,11 @@ function convertCurrency() {
                 }
             }
             //conversion equation + display result
-            var currencyAmount = document.getElementById('userInput').value;
+            var currencyAmount = $("#userInput").val();
             var result = (1 / currency1Value) * currencyAmount * currency2Value;
-            document.getElementById('result').innerHTML = result.toFixed(3) + " " + currency2;
-            document.getElementById('conversionOutput').innerHTML = " = " + currencyAmount + " " + currency1;
-            document.getElementById('dateArea').innerHTML = "As of " + date + " 4pm CET";
+            $("#result").html(result.toFixed(3) + " " + currency2);
+            $("#conversionOutput").html(" = " + currencyAmount + " " + currency1);
+            $("#dateArea").html("As of " + date + " 4pm CET");
         }
     }
 }
