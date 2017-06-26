@@ -69,8 +69,10 @@ a:hover {
 }
 
 .glyphicon-arrow-right {
-    padding-left: 10px;
-    padding-right: 5px;
+    margin: 0px 10px 0px 10px;
+    background-color: #ecf0f1;
+    display:inherit;
+    margin-top: 5px;
 }
 
 #resultsJumbo {

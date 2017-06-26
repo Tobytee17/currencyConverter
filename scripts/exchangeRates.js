@@ -8,17 +8,16 @@ $(document).ready(function() {
         //add USD value (USD value isn't generated in the API as it i used as the base currnecy)
         currentRates.USD = 1;
         date = data.date;
-        console.log(data)
+        console.log(data);
     });
 });
 
 function convertCurrency() {
     //Validates the user input amount to make sure it is an integer
     var myRegEx = /^-?\d+\.?\d*$/;
-    var regExFlag = myRegEx.test($("#userInput").val())
+    var regExFlag = myRegEx.test($("#userInput").val());
     //if input is invalid, reset all text areas + give error message
-    if ((document.getElementById('Currency1').value == "") || document.getElementById('Currency2').value == "") {
-    //if($("#Currency1").val() == "") {
+    if ((document.getElementById("Currency1").value == "") || document.getElementById("Currency2").value == "") {
         alert("Please Select two currencies");
         $("#userInput").val("");
     } else {
